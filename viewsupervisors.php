@@ -73,27 +73,53 @@ a.back-link:hover {
     background-color: #0056b3;
 }
 
-form#logout-form {
-    text-align: center;
-    margin-top: 20px;
-}
+.navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
 
-input#logout-button {
-    background-color: #d9534f;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+        }
 
-input#logout-button:hover {
-    background-color: #c9302c;
-}
+        #logout-form {
+            margin: 0;
+        }
+
+        #logout-button {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logout-button:hover {
+            background-color: #c9302c;
+        }
+
     </style>
 </head>
 <body>
-    <h1>View Supervisors</h1>
+<div class="navbar">
+        <div>
+            <a href="admin.php">Home</a>
+        </div>
+       
+        <div class="cl">
+            <form id="logout-form" action="logout.php" method="post">
+                <input id="logout-button" type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
+
     <table>
         <tr>
             <th>First Name</th>
@@ -132,6 +158,5 @@ input#logout-button:hover {
         ?>
     </table>
     <a href="admin.php">Back to Admin Dashboard</a>
-    <form id="logout-form" action="logout.php" method="post">
-                <input id="logout-button" type="submit" value="Logout">
-            </form>
+</body>
+</html>

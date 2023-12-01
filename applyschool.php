@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
         }
     }
 
-    echo "Script executed successfully. $countInserted students inserted into the assigned table.";
+    echo "Script executed successfully. students inserted into the assigned table.";
     //update the approved column for assigned students table to Yes
     $update_sql = "UPDATE students SET approved = 'Yes'";
     $update_result = $conn->query($update_sql);

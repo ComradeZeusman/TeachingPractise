@@ -186,7 +186,7 @@ include "aunthenicate.php";
         <a href="viewyoursupervisor.php">View TP Status</a>
         <a href="Complaint.php" onclick="loadcomplaints()">Send Message</a>
         <a href="add_tp_payment.php" onclick="loadtppayment()">Add Payment Details</a>
-        <a href="">View Your Grades</a>
+        <a href="view_grades.php">View Your Grades</a>
         <a href="studentviewreply.php">View Replies</a>
         <form action="logout.php" method="post">
         <button type="submit" class="logout-btn">

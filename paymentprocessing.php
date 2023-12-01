@@ -67,6 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $totalAmount = isset($response['totalAmount']['data']) ? $response['totalAmount']['data'] : null;
     $date = isset($response['date']['data']) ? $response['date']['data'] : null;
     $merchantName = isset($response['merchantName']['data']) ? $response['merchantName']['data'] : null;
+ // Displaying the confidence levels as percentages
+$totalAmountConfidence = isset($response['totalAmount']['confidenceLevel']) ? ($response['totalAmount']['confidenceLevel'] * 100) . '%' : null;
+$dateConfidence = isset($response['date']['confidenceLevel']) ? ($response['date']['confidenceLevel'] * 100) . '%' : null;
+$merchantNameConfidence = isset($response['merchantName']['confidenceLevel']) ? ($response['merchantName']['confidenceLevel'] * 100) . '%' : null;
 
 	if ($totalAmount == null || $date == null || $merchantName == null) {
 		echo "Error processing receipt. upload a clear receipt given to you by FDH BANK, and make sure the merchant name university of livingstonia is visible, the date and the amount is visible";
@@ -171,6 +175,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Total Amount:</strong> <?php echo $totalAmount; ?></p>
             <p><strong>Date:</strong> <?php echo $date; ?></p>
             <p><strong>Merchant Name:</strong> <?php echo $merchantName; ?></p>
+
+            <!-- Displaying confidence levels as percentages -->
+            <?php if ($totalAmountConfidence !== null) : ?>
+                <p><strong>Total Amount Confidence Level:</strong> <?php echo $totalAmountConfidence; ?></p>
+            <?php endif; ?>
+            <?php if ($dateConfidence !== null) : ?>
+                <p><strong>Date Confidence Level:</strong> <?php echo $dateConfidence; ?></p>
+            <?php endif; ?>
+            <?php if ($merchantNameConfidence !== null) : ?>
+                <p><strong>Merchant Name Confidence Level:</strong> <?php echo $merchantNameConfidence; ?></p>
+            <?php endif; ?>
         </div>
     </div>
 </body>

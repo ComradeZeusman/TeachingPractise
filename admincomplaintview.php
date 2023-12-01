@@ -104,6 +104,28 @@ if ($result === false) {
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #logout-form {
+            margin: 0;
+        }
+
+        #logout-button {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logout-button:hover {
+            background-color: #c9302c;
+        }
     </style>
 </head>
 <body>

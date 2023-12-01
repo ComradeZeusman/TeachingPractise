@@ -14,7 +14,8 @@ if ($result_admin->num_rows != 1) {
     <title>Admin Dashboard</title>
     <style>
         body {
-            background-color: #f2f2f2;
+            background-image: url('./imgs/1d730c6d-df41-4118-a63c-1328d235adbf.jpeg');
+            background-size: cover;
             font-family: Arial, sans-serif;
         }
 
@@ -59,9 +60,23 @@ if ($result_admin->num_rows != 1) {
             background-color: #0056b3;
         }
 
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+        }
+
         #logout-form {
-            text-align: center;
-            margin-top: 20px;
+            margin: 0;
         }
 
         #logout-button {
@@ -79,19 +94,29 @@ if ($result_admin->num_rows != 1) {
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <div>
+            <a href="#">Home</a>
+        </div>
+       
+        <div>
+            <form id="logout-form" action="logout.php" method="post">
+                <input id="logout-button" type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
     <header>
         <h1>Welcome <?php echo $admin_name; ?></h1>
         <h2>Coordinator Dashboard</h2>
         <p>Here you can manage the system.</p>
     </header>
-
     <div class="container">
+    
         <div class="card">
             <a href="addsupervisor.php">Add Supervisor</a>
             <a href="addstudent.php">Add Student</a>
             <a href="addschool.php">Add School</a>
-            <a href="applyschool.php">AUTO</a>
-
+            <a href="applyschool.php">Auto assign students</a>
         </div>
 
         <div class="card">
@@ -101,9 +126,5 @@ if ($result_admin->num_rows != 1) {
             <a href="admincomplaintview.php">View Complaints</a>
         </div>
     </div>
-
-    <form id="logout-form" action="logout.php" method="post">
-        <input id="logout-button" type="submit" value="Logout">
-    </form>
 </body>
 </html>

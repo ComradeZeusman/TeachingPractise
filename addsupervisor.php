@@ -11,9 +11,12 @@ if ($result_admin->num_rows != 1) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add supervisor</title>
-	<style>
+    <title>Add Supervisor</title>
+    <style>
+        /* General styling */
         body {
+            background-image: url('./imgs/1d730c6d-df41-4118-a63c-1328d235adbf.jpeg');
+            background-size: cover;
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f0f0f0;
@@ -22,10 +25,10 @@ if ($result_admin->num_rows != 1) {
         }
 
         h1 {
-            color: #333;
+            color: white;
         }
 
-        form {
+        .for {
             background-color: #fff;
             border: 2px solid #3498db;
             border-radius: 10px;
@@ -76,27 +79,52 @@ if ($result_admin->num_rows != 1) {
             text-decoration: underline;
         }
 
-        logout-form {
-            margin-top: 20px;
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
         }
 
-        logout-button {
-            background-color: #ff0000;
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #logout-form {
+            margin: 0;
+        }
+
+        #logout-button {
+            background-color: #d9534f;
             color: #fff;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
             cursor: pointer;
         }
 
-        logout-button:hover {
-            background-color: #cc0000;
+        #logout-button:hover {
+            background-color: #c9302c;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome <?php echo $admin_name; ?></h1><br>
-    <h3>Add Supervisor</h3>
+    <div class="navbar">
+        <div>
+            <a href="admin.php">Home</a>
+        </div>
+        <div>
+            <form id="logout-form" action="logout.php" method="post">
+                <input id="logout-button" type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
+    <h1>Add Supervisor</h1>
+    <div class="for">
     <form action="adminprocesses.php" method="POST">
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name" required><br><br>
@@ -112,12 +140,8 @@ if ($result_admin->num_rows != 1) {
         
         <button type="submit">Submit</button>
     </form>
+    </div>
 
     <a href="admin.php">Back to Admin Dashboard</a>
-    
-    <form id="logout-form" action="logout.php" method="post">
-                <input id="logout-button" type="submit" value="Logout">
-            </form>
-            
 </body>
 </html>

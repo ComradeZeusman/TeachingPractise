@@ -15,6 +15,8 @@ if ($result_admin->num_rows != 1) {
     <title>Add schools</title>
 	<style>
         body {
+            background-image: url('./imgs/1d730c6d-df41-4118-a63c-1328d235adbf.jpeg');
+            background-size: cover;
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f0f0f0;
@@ -22,7 +24,7 @@ if ($result_admin->num_rows != 1) {
             margin: 0;
         }
 
-        form {
+        .for {
             background-color: #fff;
             border: 2px solid #3498db;
             border-radius: 10px;
@@ -64,9 +66,52 @@ if ($result_admin->num_rows != 1) {
         button[type="submit"]:hover {
             background-color: #2472b4;
         }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #logout-form {
+            margin: 0;
+        }
+
+        #logout-button {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logout-button:hover {
+            background-color: #c9302c;
+        }
     </style>
 </head>
 <body>
+<div class="navbar">
+        <div>
+            <a href="admin.php">Home</a>
+        </div>
+       
+        <div>
+            <form id="logout-form" action="logout.php" method="post">
+                <input id="logout-button" type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
+    <div class="for">
     <form action="addschoolprocesses.php" method="POST">
         <label for="school_name">School Name</label>
         <input type="text" name="school_name" id="school_name" required>
@@ -78,5 +123,6 @@ if ($result_admin->num_rows != 1) {
         <input type="text" name="school_address" id="school_address" required>
         <br>
         <button type="submit">Add School</button>
+    </div>
 </body>
 </html>

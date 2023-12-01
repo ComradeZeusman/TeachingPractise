@@ -12,7 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql1 = "SELECT * FROM classcontrol WHERE student_id='$user_id'";
+$sql1 = "SELECT * FROM classcontrol2 WHERE student_id='$user_id'";
 $result1 = mysqli_query($conn, $sql1);
 
 if(!$result1){
@@ -34,7 +34,7 @@ if(!$result1){
     }
 }
 
-$sql2 = "SELECT * FROM lesson_presentation WHERE student_id='$user_id'";
+$sql2 = "SELECT * FROM lesson_presentation2 WHERE student_id='$user_id'";
 $result2 = mysqli_query($conn, $sql2);
 
 if(!$result2){
@@ -68,7 +68,7 @@ if(!$result2){
     }
 }
 
-$sql3 = "SELECT * FROM evaluation_assessment WHERE student_id='$user_id'";
+$sql3 = "SELECT * FROM evaluation_assessment2 WHERE student_id='$user_id'";
 $result3 = mysqli_query($conn, $sql3);
 
 if(!$result3){
@@ -91,7 +91,7 @@ if(!$result3){
     
     }
 }
-$sql4 = "SELECT * FROM personalandprofessional WHERE student_id='$user_id'";
+$sql4 = "SELECT * FROM personalandprofessional2 WHERE student_id='$user_id'";
 $result4 = mysqli_query($conn, $sql4);
 
 if(!$result4){
@@ -110,7 +110,7 @@ if(!$result4){
     }
 }
 
-$sql5 = "SELECT * FROM recordkeeping WHERE student_id='$user_id'";
+$sql5 = "SELECT * FROM recordkeeping2 WHERE student_id='$user_id'";
 $result5 = mysqli_query($conn, $sql5);
 
 if(!$result5){
@@ -260,7 +260,7 @@ if(!$result5){
 <body>
   
     <div class="container">
-    <h1>CONTINOUS 1 GRADES</h1>
+        <h1>CONTINOUS 2 GRADES</h1>
         <div class="item form">
                 <table>
                     <tr>
@@ -445,7 +445,7 @@ if(!$result5){
     </table>
         </div>
     </div>
-    <a href="view_grades2.php">View continous 2</a>
+    <a href="dashboard.php">Back to dashboard</a>
 </body>
 
 </html>

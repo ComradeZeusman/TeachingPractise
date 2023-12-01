@@ -106,7 +106,7 @@
             <input type="password" name="password" id="password" placeholder="Password" required><br>
             <button type="submit">Log in</button>
             <div class="forgot-password">
-                <a href="forgot-password.php">Forgot password</a>
+                <a href="forgot.php">Forgot password</a>
             </div>
         </form>
     </div>

@@ -91,10 +91,52 @@ input#logout-button {
 input#logout-button:hover {
     background-color: #c9302c;
 }
+.navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #logout-form {
+            margin: 0;
+        }
+
+        #logout-button {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logout-button:hover {
+            background-color: #c9302c;
+        }
+
     </style>
 </head>
 <body>
-    <h1>View Students</h1>
+<div class="navbar">
+        <div>
+            <a href="admin.php">Home</a>
+        </div>
+       
+        <div class="cl">
+            <form id="logout-form" action="logout.php" method="post">
+                <input id="logout-button" type="submit" value="Logout">
+            </form>
+        </div>
+    </div>
     <form method="post" action="viewstudents.php">
         <input type="text" name="search" placeholder="Search by name or program or reg_number">
         <input type="submit" value="Search">
@@ -148,7 +190,7 @@ input#logout-button:hover {
         echo "<td>" . $row["year"] . "</td>";
         echo "<td>" . $row["semester"] . "</td>";
         echo "<td>" . $row["approved"] . "</td>";
-        echo "<td>" . $row4["amount"] . "</td>";
+        echo "<td>" . ($row4["amount"] ?? 'N/A') . "</td>";
         echo "<td><a href='deletestudent.php?id=" . $row["student_id"] . "'>Delete</a></td>";
         echo "</tr>";
         }
